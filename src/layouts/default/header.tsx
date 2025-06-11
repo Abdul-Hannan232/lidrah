@@ -55,7 +55,8 @@ function Header() {
         displayMobileSearch && 'active-mobile-search',
       )}
     >
-      <div className="z-20 transition-all duration-200 ease-in-out innerSticky lg:w-full body-font bg-fill-secondary">
+      {/* <div className="z-20 transition-all duration-200 ease-in-out innerSticky lg:w-full body-font bg-fill-secondary"> */}
+      <div className="z-20 transition-all duration-200 ease-in-out innerSticky lg:w-full body-font bg-brand-dark">
         <Search
           searchId="mobile-search"
           className="top-bar-search hidden lg:max-w-[600px] absolute z-30 px-4 md:px-6 top-1"
@@ -96,7 +97,7 @@ function Header() {
         </Container>
         {/* End of top part */}
 
-        <div className="hidden navbar bg-brand-light lg:block">
+        <div className="hidden navbar bg-brand-dark lg:block">
           <Container className="flex items-center justify-between h-16">
             {/* <Logo className="!w-0 transition-all duration-200 ease-in-out opacity-0 navbar-logo" /> */}
             {/* End of logo */}

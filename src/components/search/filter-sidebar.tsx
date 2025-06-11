@@ -38,7 +38,7 @@ const FilterSidebar = () => {
         </div>
       </Scrollbar>
 
-      <div className="flex items-center justify-center leading-4 text-15px md:text-base px-7 shrink-0 h-14 bg-fill-secondary text-brand-dark ">
+      <div className="flex items-center justify-center leading-4 text-15px md:text-base px-7 shrink-0 h-14 bg-fill-secondary text-brand-light ">
         2,6835 Items Found
       </div>
     </div>

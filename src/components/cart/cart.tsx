@@ -63,7 +63,7 @@ export default function Cart() {
         <div className="flex pb-5 md:pb-7">
           <div className="ltr:pr-3 rtl:pl-3">
             <Heading className="mb-2.5">Subtotal:</Heading>
-            <Text className="leading-6">
+            <Text className="leading-6 text-brand-muted">
               Final price and discounts will be determined at the time of
               payment processing.
             </Text>

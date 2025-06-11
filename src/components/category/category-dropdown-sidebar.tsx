@@ -6,6 +6,7 @@ import SidebarMenu from '@components/ui/sidebar-menu';
 import CategoryListCardLoader from '@components/ui/loaders/category-list-card-loader';
 import { useCategoriesQuery } from '@framework/category/get-all-categories';
 import cn from 'classnames';
+import useWindowSize from '@utils/use-window-size';
 
 interface CategorySidebarProps {
   className?: string;
@@ -24,12 +25,13 @@ export default function CategoryDropdownSidebar({
   } = useCategoriesQuery({
     limit: 10,
   });
+    const { width } = useWindowSize();
 
   // console.log(  '/////////////////',  data  );
   
   return (
     <aside className={cn('category-mobile-sidebar', className)}>
-      <div className="h-full max-h-full overflow-auto border rounded border-border-base">
+      <div className={`h-full max-h-full overflow-auto border rounded ${width as number < 1280 ? "border-border-one":"border-border-base"} `}>
         {error ? (
           <div className="2xl:ltr:pr-4 2xl:rtl:pl-4">
             <Alert message={error.message} />

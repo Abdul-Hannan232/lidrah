@@ -15,9 +15,9 @@ export default async function Page() {
   return (
     <>
       <PageContactHeroSection />
-      <Container>
-        <div className="max-w-[1420px] mx-auto mb-12 lg:mb-14 xl:mb-16">
-          <div className="flex flex-wrap bg-brand-light w-full p-5 md:p-7 lg:p-10 xl:p-16 3xl:px-[70px] xl:py-12 shadow-contact rounded-md -mt-8 relative z-10">
+      <Container className='bg-brand-light'>
+        <div className="max-w-[1420px] mx-auto mb-12 lg:mb-14 xl:mb-16 bg-brand-light">
+          <div className="flex flex-wrap   w-full p-5 md:p-7 lg:p-10 xl:p-16 3xl:px-[70px] xl:py-12 shadow-contact rounded-md -mt-8 relative z-10">
             <div className="w-full md:w-[53%] xl:w-[60%] md:ltr:pr-8 md:rtl:pl-8 lg:ltr:pr-0 lg:rtl:pl-0 2xl:ltr:pr-24 2xl:rtl:pl-24 lg:mb-0 mb-8">
               <ContactSupport />
             </div>

@@ -34,7 +34,7 @@ export default function CompleteOrderContent() {
   return (
     <>
       <Divider />
-      <Container>
+      <Container className='bg-brand-light'>
       <Suspense fallback={<div>Loading...</div>}>
         {/* <OrderInformation oid={id  as number} /> */}
         {id ? <OrderInformation oid={id} /> : <div>Loading Order Information...</div>}

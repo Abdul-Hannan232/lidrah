@@ -63,10 +63,12 @@ export const CheckoutItem: React.FC<{
         {/* {price ? price : item.price * Number(quantity)} */}
         Rs{' '}
         {price
-          ? price
+          ? price.replace('PKR', '').trim() // removes 'PKR' if present
           : item?.promo_price_pkr
             ? item?.promo_price_pkr * Number(quantity)
             : item.price * Number(quantity)}
+
+
         {item?.delivery && Number(item?.delivery) > 0 ? (
           <span className="text-13px sm:text-sm text-brand-muted  font-normal">
             Delivery:

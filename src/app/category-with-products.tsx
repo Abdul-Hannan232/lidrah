@@ -79,10 +79,10 @@ export const CategoryContextProvider = ({ children }: { children: ReactNode }) =
 };
 
 // Main Component
-export default function CategoryWithProduct() {
+export default function CategoryWithProduct({className}:{className:string}) {
   return (
     // <CategoryContextProvider>
-      <Element name="grid" className="flex flex-col mb-16 md:flex-row">
+      <Element name="grid" className={`flex flex-col mb-16 md:flex-row  ${className}`}>
         <CategoryDropdownSidebar className="shrink-0 ltr:pr-8 rtl:pl-8 xl:ltr:pr-10 xl:rtl:pl-10 hidden xl:block w-[350px] 2xl:w-96 lg:sticky lg:top-24" />
         <RefinedAllProductFeed className="w-full xl:ltr:-ml-3 xl:rtl:-mr-3 3xl:ltr:-ml-1 3xl:rtl:-mr-1 3xl:ltr:pr-2 3xl:rtl:pl-2" />
       </Element>

@@ -26,7 +26,7 @@ const WidgetAbout: React.FC<AboutProps> = ({ social, className }) => {
           className="mx-auto mb-3 lg:mb-5 sm:ltr:ml-0 sm:rtl:mr-0"
         />
         <Text>
-        SardarBaba brings you top-quality products with fast, reliable delivery — a store you can trust.
+       Timeless leather craftsmanship for modern life — from rugged jackets to refined accessories, built to last and designed to impress.
         </Text>
       </div>
 

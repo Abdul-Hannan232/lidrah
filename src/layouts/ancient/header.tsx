@@ -46,18 +46,19 @@ function Header() {
       id="siteHeader"
       ref={siteHeaderRef}
       className={cn(
-        'header-one w-full h-16 lg:h-20 z-40 fixed top-0',
+        'header-one w-full h-16 lg:h-20 z-40 fixed top-0 ',
         displayMobileSearch && 'active-mobile-search',
       )}
     >
-      <div className="z-20 w-full h-16 transition duration-200 ease-in-out shadow-header innerSticky body-font bg-brand-light lg:h-20">
+      {/* <div className="z-20 w-full h-16 transition duration-200 ease-in-out shadow-header innerSticky body-font bg-[#291a19] lg:h-20"> */}
+      <div className="z-20 w-full h-16 transition duration-200 ease-in-out shadow-header innerSticky body-font bg-brand-dark lg:h-20">
         <Search className="top-bar-search lg:max-w-[600px] absolute z-30 px-4 md:px-6 top-1" />
         {/* End of Mobile search */}
-        <Container className="flex items-center justify-between w-full h-full">
+        <Container className="flex items-center justify-between w-full h-full ">
           <div className="flex shrink-0">
             <button
               aria-label="Menu"
-              className="flex-col items-center justify-center hidden outline-none menuBtn ltr:mr-5 rtl:ml-5 lg:flex 2xl:hidden shrink-0 focus:outline-none"
+              className="flex-col items-center text-brand-light justify-center hidden outline-none menuBtn ltr:mr-5 rtl:ml-5 lg:flex 2xl:hidden shrink-0 focus:outline-none"
               onClick={handleMobileMenu}
             >
               <MenuIcon />
@@ -81,7 +82,7 @@ function Header() {
             </div>
             <CartButton className="hidden lg:flex 2xl:hidden xl:mx-3.5 mx-2.5" />
             <div className="items-center hidden lg:flex shrink-0 xl:mx-3.5 mx-2.5">
-              <UserIcon className="text-brand-dark text-opacity-40" />
+              <UserIcon className="text-brand-light text-opacity-60" />
               <AuthMenu
                 isAuthorized={isAuthorized}
                 href={`${ROUTES.ACCOUNT}`}

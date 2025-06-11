@@ -67,9 +67,9 @@ const BannerCard: React.FC<BannerProps> = ({
           // className={cn(' bg-fill-thumbnail object-cover max-h-[280px] w-full', {
           className={cn(
             // ' bg-fill-thumbnail object-cover object-center max-h-[250px] w-full',
-            ' bg-fill-thumbnail object-cover object-center  max-h-[442px] md:max-h-[250px] w-full',
+            ' bg-fill-thumbnail  object-cover object-center  max-h-[442px] md:h-[380px] w-full',
             {
-              'rounded-md': variant === 'rounded',
+              'rounded-2xl': variant === 'rounded',
             },
           )}
         />

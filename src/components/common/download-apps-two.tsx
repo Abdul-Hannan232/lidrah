@@ -83,6 +83,7 @@ const DownloadAppsTwo: React.FC<Props> = ({
     
     <div
       className={cn(
+        // 'relative bg-fill-two overflow-hidden bg-cover bg-top  ',
         'relative bg-fill-two overflow-hidden bg-cover bg-top  ',
         className,
       )}

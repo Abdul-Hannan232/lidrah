@@ -75,9 +75,9 @@ function SubscriptionForm() {
         type="email"
         id="subscription-email"
         variant="solid"
-        className="w-full"
+        className="w-full "
         disabled={isPending}
-        inputClassName="ltr:pl-10 rtl:pr-10 2xl:px-11 h-12 rounded-md"
+        inputClassName="ltr:pl-10 rtl:pr-10 2xl:px-11 h-12 rounded-md bg-transparent border-[#CACACA]"
         {...register('email', {
           required: `You must need to provide your email address`,
           pattern: {
@@ -112,7 +112,7 @@ const WidgetSubscription: React.FC<Props> = ({ className }) => {
 
   return (
     <div className={cn('flex flex-col', className)}>
-      <Heading variant="mediumHeading" className="mb-4 lg:mb-6 lg:pb-0.5">
+      <Heading variant="mediumHeading" className="mb-4 lg:mb-6 lg:pb-0.5 text-brand-light sm:mt-14">
         Subscribe Now
       </Heading>
 

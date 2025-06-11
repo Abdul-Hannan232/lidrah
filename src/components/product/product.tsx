@@ -227,7 +227,7 @@ const ProductSingleDetails = () => {
 
   
   return (
-    <div className="pt-6 pb-2 md:pt-7">
+    <div className="pt-6 pb-2 md:pt-7 bg-brand-light">
       <div className="grid-cols-10 lg:grid gap-7 2xl:gap-8">
         <div className="col-span-5 mb-6 overflow-hidden xl:col-span-6 md:mb-8 lg:mb-0">
           {/* {!!gallery?.length ? ( */}

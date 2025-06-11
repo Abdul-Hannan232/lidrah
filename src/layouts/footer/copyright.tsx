@@ -26,10 +26,10 @@ const Copyright: React.FC<CopyrightProps> = ({
         }`}
       >
         <div className="flex flex-col pt-6 text-center border-t md:flex-row md:justify-between border-border-three lg:pt-7">
-          <p className="text-brand-dark text-sm leading-7 lg:leading-[27px] lg:text-15px">
+          <p className="text-brand-light text-sm leading-7 lg:leading-[27px] lg:text-15px">
             &copy;&nbsp;Copyright {year}&nbsp;
             <a
-              className="transition-colors duration-200 ease-in-out text-brand-dark hover:text-brand"
+              className="transition-colors duration-200 ease-in-out text-brand-light hover:text-brand-dark"
               href={siteSettings.author.websiteUrl}
               target='_blank'
             >

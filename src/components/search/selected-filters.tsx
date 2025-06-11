@@ -4,6 +4,7 @@ import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import isEmpty from 'lodash/isEmpty';
 import { useEffect, useState } from 'react';
 import useQueryParam from '@utils/use-query-params';
+import useWindowSize from '@utils/use-window-size';
 
 export default function SelectedFilters() {
   const { push } = useRouter();
@@ -11,6 +12,7 @@ export default function SelectedFilters() {
   const searchParams = useSearchParams();
   const { clearQueryParam, updateQueryparams } = useQueryParam(pathname ?? '/');
   const [state, setState] = useState({});
+    const { width } = useWindowSize();
 
   useEffect(() => {
     setState({});
@@ -39,10 +41,10 @@ export default function SelectedFilters() {
       {!isEmpty(searchParams?.toString()) && (
         <div className="block -mb-3">
           <div className="flex items-center justify-between mb-4 -mt-1">
-            <Heading>Filters</Heading>
+            <Heading className={`${width as number > 1280? "text-brand-light":"text-brand-dark"} `}>Filters</Heading>
             {/* @ts-ignore */}
             <button
-              className="flex-shrink transition duration-150 ease-in text-13px focus:outline-none hover:text-brand-dark"
+              className={`flex-shrink transition duration-150 ease-in text-13px focus:outline-none hover:text-brand-dark`}
               aria-label="Clear All"
               onClick={() => {
                 push(pathname);

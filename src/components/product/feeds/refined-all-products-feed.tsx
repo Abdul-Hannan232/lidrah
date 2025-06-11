@@ -24,14 +24,6 @@ const RefinedAllProductFeed: FC<ProductFeedProps> = ({ className = '' }) => {
 
   const [newQuery, setNewQuery] = useState<string>("")
   
-  // const pathname = usePathname();
-  // const { getParams, query } = useQueryParam(pathname ?? '/');
-  // const newQuery: any = getParams(
-  //   // @ts-ignore
-  //   `${process.env.NEXT_PUBLIC_WEBSITE_URL}${query}`,
-  // );
-  // console.log('query  >>>> ' , newQuery);
-  
   useEffect(()=>{
     setNewQuery(params)
   },[params])
@@ -40,21 +32,11 @@ const RefinedAllProductFeed: FC<ProductFeedProps> = ({ className = '' }) => {
   const {
     isFetching: isLoading,
     isFetchingNextPage: loadingMore,
-    fetchNextPage,
-    hasNextPage,
     data,
     error,
   } = useProductsQuery({
-    // limit: LIMITS.REFINED_PRODUCTS_LIMITS,
-    // limit: 20,
-    // @ts-ignore
-    // text: newQuery.category ? `category=${newQuery?.category}` : 'all=true',
     text: newQuery ? `category=${newQuery}` : 'all=true',
-    // text: 'all=true',
-    // newQuery: 'all=true',
   });
-  // console.log('data ',data?.pages[0]?.data);
-  // console.log(data);
 
   const { openModal } = useModalAction();
 
@@ -62,7 +44,6 @@ const RefinedAllProductFeed: FC<ProductFeedProps> = ({ className = '' }) => {
     openModal('CATEGORY_VIEW');
   }
 
-  // console.log('--------->>>>', data)
   return (
     <div className={cn(className)}>
       <div className="xl:hidden flex items-center justify-between pb-0.5 mb-4 lg:mb-5 xl:mb-6">
@@ -107,20 +88,6 @@ const RefinedAllProductFeed: FC<ProductFeedProps> = ({ className = '' }) => {
                 })
               )}
 
-              {/* {data?.pages?.map((page: any, index) => {
-                return (
-                  <Fragment key={index}>
-                    {page?.data
-                      ?.slice(0, LIMITS.REFINED_PRODUCTS_LIMITS)
-                      ?.map((product: Product) => (
-                        <ProductCardAlpine
-                          key={`product--key${product.id}`}
-                          product={product}
-                        />
-                      ))}
-                  </Fragment>
-                );
-              })} */}
             </>
           )}
         </div>

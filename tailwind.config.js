@@ -5,10 +5,23 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        // brand: {
+        //   DEFAULT: '#02b290',
+        //   dark: '#000000',
+        //   light: '#ffffff',
+        //   muted: '#595959',
+        //   tree: '#6fb48e',
+        //   'tree-dark': '#0B4635',
+        //   danger: '#dc2626',
+        // },
         brand: {
-          DEFAULT: '#02b290',
-          dark: '#000000',
-          light: '#ffffff',
+          DEFAULT: '#6D4440',
+          dark: '#291d1a',
+          light: '#FFFFFF',
+          black: '#000',
+          light2: '#4B2E2B',
+          light3: '#553D3A',
+          // contrast: '#291d1a',
           muted: '#595959',
           tree: '#6fb48e',
           'tree-dark': '#0B4635',
@@ -23,7 +36,8 @@ module.exports = {
         },
         fill: {
           base: '#f3f6f9',
-          secondary: '#f8f9fb',
+          // secondary: '#f8f9fb',
+          secondary: '#4B2E2B',
           thumbnail: '#f3f6fa',
           'dropdown-hover': '#f6f9fc',
           one: '#f1f6f9',
@@ -32,11 +46,13 @@ module.exports = {
           four: '#e5eaf1',
         },
         border: {
-          base: '#e7ecf0',
+          base: '#6D4440',
           one: '#e3e8ec',
           two: '#e2e8f0',
           three: '#e6e6e6',
           four: '#dee5ea',
+          five: '#5A5A5A',
+          
         },
       },
       fontSize: {

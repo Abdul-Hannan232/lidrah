@@ -17,7 +17,7 @@ const Logo: React.FC<React.AnchorHTMLAttributes<{}>> = ({
       )}
       {...props}
     >
-      <div className="flex items-baseline text-xl md:text-lg xl:text-2xl items-center justify-center ml-8 md:ml-2 xl:ml-12 font-bold">
+      {/* <div className="flex items-baseline text-xl md:text-lg xl:text-2xl items-center justify-center ml-8 md:ml-2 xl:ml-12 font-bold">
         <svg
           width="40"
           height="30"
@@ -35,13 +35,13 @@ const Logo: React.FC<React.AnchorHTMLAttributes<{}>> = ({
             fill="#02B290"
           />
         </svg>
-        <p className="">SARDARBABA</p>
-      </div>
-      {/* <Image
+        <p className="">LIDRAH</p>
+      </div> */}
+      <Image
         src={siteSettings?.logo?.url}
         alt={siteSettings?.logo?.alt}
         loading="eager"
-      /> */}
+      />
       {/* <b>SARDAR_STORE</b> */}
     </Link>
   );
