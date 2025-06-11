@@ -1,7 +1,8 @@
 import Image from 'next/image';
 
 const Features = ({ className, style }: { className: string; style: any }) => {
-  // Dummy array of objects
+  // Dummy array of objects...
+  
   const featuresData = [
     {
       id: 1,
