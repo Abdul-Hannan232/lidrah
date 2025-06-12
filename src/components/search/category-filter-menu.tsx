@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 import Image from '@components/ui/image';
 import { FaCheck } from 'react-icons/fa';
 import useQueryParam from '@utils/use-query-params';
+import useWindowSize from '@utils/use-window-size';
 
 function checkIsActive(arr: any, item: string) {
   if (arr.includes(item)) {
@@ -24,7 +25,8 @@ function safeJSONParse(value: string | null) {
 }
 
 function CategoryFilterMenuItem({
-  className = 'hover:bg-fill-base border-t border-border-base first:border-t-0 px-3.5 2xl:px-4 py-3 xl:py-3.5 2xl:py-2.5 3xl:py-3',
+  // className = 'hover:bg-fill-secondary text-brand-light border-t border-border-base first:border-t-0 px-3.5 2xl:px-4 py-3 xl:py-3.5 2xl:py-2.5 3xl:py-3',
+  className = ' border-t border-border-base first:border-t-0 px-3.5 2xl:px-4 py-3 xl:py-3.5 2xl:py-2.5 3xl:py-3',
   item,
   subItem,
   depth = 0,
@@ -33,6 +35,8 @@ function CategoryFilterMenuItem({
   const searchParams = useSearchParams();
   const { updateQueryparams } = useQueryParam(pathname ?? '/');
   const [formState, setFormState] = useState<string[]>([]);
+   const { width } = useWindowSize();
+  
 
   // console.log('item', item);
 
@@ -102,19 +106,25 @@ function CategoryFilterMenuItem({
   let expandIcon;
   if (Array.isArray(items) && items.length) {
     expandIcon = !isOpen ? (
-      <IoIosArrowDown className="text-base text-brand-dark text-opacity-40" />
+      <IoIosArrowDown className="text-base   text-opacity-40" />
     ) : (
-      <IoIosArrowUp className="text-base text-brand-dark text-opacity-40" />
+      <IoIosArrowUp className="text-base  text-opacity-40" />
     );
   }
 
+
+  
   return (
     <>
       <li
         onClick={onClick}
+                  // ${isActive && (width as number) > 1279 ? 'bg-brand-light2 text-brand-light hover:bg-fill-secondary' : isActive && (width as number) < 1280 ? "bg-fill-brand text-brand-dark" : !isActive && (width as number) > 1279 ? "  hover:bg-brand-light2  " : '  '} text-opacity-70 
+
         className={cn(
-          'flex justify-between items-center transition text-sm md:text-15px',
-          { 'bg-fill-base': isOpen },
+          { 'bg-brand-light2 text-brand-light': isOpen },
+          `${ (width as number) < 1280 ? '  border-border-one ' : ' border-border-base '}    flex  justify-between items-center transition text-sm md:text-15px
+        ${ formState.includes(item.name || name || item) ? "!text-yellow-100":item !== formState && width as number < 1280 ?"text-brand-dark hover:text-opacity-70" :item !== formState && width as number > 1279 ?" text-brand-light":''} text-opacity-70 
+          `,
           className,
         )}
       >
@@ -137,7 +147,8 @@ function CategoryFilterMenuItem({
               />
             </div>
           )}
-          <span className="text-brand-dark capitalize py-0.5">
+          {/* <span className={`  ${ subItem === formState ? "text-[#02b290]":subItem !== formState && width as number < 1280 ?"text-brand-dark" :subItem !== formState && width as number > 1279 ?"text-brand-light":''}  capitalize py-0.5`}> */}
+          <span className={`    capitalize py-0.5`}>
             {name || item}
           </span>
           {depth > 0 && (
@@ -151,7 +162,7 @@ function CategoryFilterMenuItem({
             </span>
           )}
           {expandIcon && (
-            <span className="ltr:ml-auto rtl:mr-auto">{expandIcon}</span>
+            <span className={`  ltr:ml-auto rtl:mr-auto`}>{expandIcon}</span>
           )}
         </button>
       </li>

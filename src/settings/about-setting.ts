@@ -3,9 +3,9 @@ export const aboutSetting = {
   titleTwo: 'Who We Are',
   titleThree: 'What We Stand For',
   titleFour: 'Our Mission',
-  titleFive: ' Thank you for choosing SardarBaba.',
-  descriptionOne: `<p> SardarBaba, At SardarBaba, we are dedicated to bringing a wide variety of quality products right to your doorstep — from beautiful home decor and fun birthday party essentials to trusted baby care items, stylish leather goods, practical school supplies, engaging toys, and must-have mobile accessories.</p>`,
-   descriptionTwo: `<p>SardarBaba was created with a simple vision: to make shopping convenient, fun, and accessible for everyone. Whether you're planning a celebration, upgrading your home, taking care of your little one, or just looking for useful everyday items, we’ve got something for you.
+  titleFive: ' Thank you for choosing LIDRAH.',
+  descriptionOne: `<p> LIDRAH, At LIDRAH, we are dedicated to bringing a wide variety of quality products right to your doorstep — from beautiful home decor and fun birthday party essentials to trusted baby care items, stylish leather goods, practical school supplies, engaging toys, and must-have mobile accessories.</p>`,
+  descriptionTwo: `<p>LIDRAH was created with a simple vision: to make shopping convenient, fun, and accessible for everyone. Whether you're planning a celebration, upgrading your home, taking care of your little one, or just looking for useful everyday items, we’ve got something for you.
 </p>`,
 
   descriptionThree: `

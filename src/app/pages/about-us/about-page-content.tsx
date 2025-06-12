@@ -25,7 +25,7 @@ export default function AboutPageContent() {
         }}
       />
       <img alt="about-us-banner" className='h-[250px] lg:h-96 2xl:h-[500px]' style={{position:"absolute", top:"0", left:"0", right:"0", bottom:"0"}} src={backgroundThumbnail}  />
-      <div className="py-8 lg:py-16 2xl:py-20">
+      <div className="py-8 lg:py-16 2xl:py-20 bg-brand-light">
         <Container>
           <div className="flex flex-col w-full mx-auto max-w-[1200px]">
             <h2 className="text-lg md:text-xl lg:text-[24px] text-brand-dark font-semibold mb-4 lg:mb-7">

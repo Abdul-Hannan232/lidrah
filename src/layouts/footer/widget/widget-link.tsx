@@ -19,7 +19,7 @@ const WidgetLink: React.FC<Props> = ({ className, data }) => {
 
   return (
     <div className={`${className}`}>
-      <Heading variant="mediumHeading" className="mb-4 sm:mb-5 lg:mb-6 pb-0.5">
+      <Heading variant="mediumHeading" className="mb-4 sm:mb-5 lg:mb-6 pb-0.5 text-brand-light sm:mt-14">
         {`${widgetTitle}`}
       </Heading>
       <ul className="flex flex-col space-y-3 text-sm lg:text-15px">
@@ -36,7 +36,7 @@ const WidgetLink: React.FC<Props> = ({ className, data }) => {
 
             <Link
               href={`${list.path ? list.path : ''}`}
-              className="transition-colors duration-200 hover:text-brand-dark"
+              className="transition-colors duration-200 text-[#CACACA] hover:text-opacity-60"
             >
               {`${list.title}`}
             </Link>

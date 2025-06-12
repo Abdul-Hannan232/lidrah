@@ -11,7 +11,7 @@ function makeTitleToDOMId(title: string) {
 
 export default function PrivacyPageContent() {
   return (
-    <div className="py-12 lg:py-16 2xl:py-20 xl:px-16 2xl:px-24 3xl:px-36">
+    <div className="bg-brand-light py-12 lg:py-16 2xl:py-20 xl:px-16 2xl:px-24 3xl:px-36">
       <Container>
         <div className="flex flex-col md:flex-row">
           <nav className="hidden mb-8 sm:block md:w-72 xl:w-3/12 2xl:mb-0 lg:-mt-2">
@@ -25,7 +25,7 @@ export default function PrivacyPageContent() {
                     smooth={true}
                     duration={200}
                     to={makeTitleToDOMId(item.title)}
-                    activeClass="text-brand font-medium borderColor relative ltr:pl-3 rtl:pr-3"
+                    activeClass="text-brand-light3 font-medium borderColor relative ltr:pl-3 rtl:pr-3"
                     className="block py-3 text-sm font-medium transition-all cursor-pointer lg:text-15px text-brand-dark"
                   >
                     {item.title}

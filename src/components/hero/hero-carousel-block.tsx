@@ -12,9 +12,7 @@ interface Props {
 }
 
 const HeroCarouselBlock: React.FC<Props> = ({
-  // heroBanner,
-  // className = 'mt-5 mb-8 xl:mb-10 max-h-[250px]',
-  className = 'mt-5 mb-8 xl:mb-10 max-h-[442px]  md:max-h-[250px]  ',
+  className = 'mt-5 mb-8 xl:mb-10 max-h-[442px]    md:h-[380px]   md:max-h-[380px] ',
 }) => {
   const [heroBanner , setHeroBanner]= useState([])
 
@@ -57,7 +55,7 @@ useEffect(() => {
           <SwiperSlide key={`banner--key-${banner.id}`}>
             <BannerCard
               banner={banner}
-              className="overflow-hidden rounded-md"
+              className="overflow-hidden rounded-2xl"
             />
           </SwiperSlide>
         ))}

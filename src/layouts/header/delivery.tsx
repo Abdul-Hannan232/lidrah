@@ -17,7 +17,7 @@ const Delivery: React.FC<DeliveryProps> = ({ className }) => {
   return (
     <div className={cn('delivery-address', className)}>
       <button
-        className="inline-flex items-center text-15px text-brand-dark tracking-[0.1px]"
+        className="inline-flex items-center text-15px text-brand-light tracking-[0.1px]"
         onClick={handleDeliveryView}
       >
         <LocationIcon />
@@ -26,7 +26,7 @@ const Delivery: React.FC<DeliveryProps> = ({ className }) => {
           {!isAuthorized ? 'Address' : 'Home Address'}
         </span>
         <span className="ltr:pl-1.5 lg:rtl:pr-1.5">
-          <FaChevronDown className="text-xs text-brand-dark text-opacity-40" />
+          <FaChevronDown className="text-xs text-brand-light text-opacity-40" />
         </span>
       </button>
     </div>

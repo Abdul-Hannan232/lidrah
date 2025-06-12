@@ -9,10 +9,10 @@ export default function AncientLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen ">
       <Header />
       <main
-        className="relative flex-grow pt-16 lg:pt-20"
+        className="relative flex-grow pt-16 lg:pt-20 "
         style={{
           WebkitOverflowScrolling: 'touch',
         }}

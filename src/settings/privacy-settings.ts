@@ -55,8 +55,7 @@ export const privacyPolicy = [
   {
     id: '5',
     title: 'Cookies and Tracking Technologies',
-    description:
-      `<p>We use cookies and similar tracking technologies to:</p>
+    description: `<p>We use cookies and similar tracking technologies to:</p>
       <ol>
        <li>Enable essential website functionality</li>
     <li>Remember user preferences</li>
@@ -85,7 +84,7 @@ export const privacyPolicy = [
   {
     id: '7',
     title: 'Children’s Privacy',
-    description: `<p>SardarBaba does not knowingly collect data from children under the age of 13. If we discover that a child has provided us with personal information, we will delete it immediately.
+    description: `<p>LIDRAH does not knowingly collect data from children under the age of 13. If we discover that a child has provided us with personal information, we will delete it immediately.
 </p>`,
   },
   {

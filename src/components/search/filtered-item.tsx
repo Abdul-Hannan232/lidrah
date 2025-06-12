@@ -1,3 +1,4 @@
+import useWindowSize from '@utils/use-window-size';
 import { IoClose } from 'react-icons/io5';
 
 interface Props {
@@ -7,9 +8,11 @@ interface Props {
 }
 
 export const FilteredItem = ({ itemKey, itemValue, onClick }: Props) => {
+    const { width } = useWindowSize();
+
   return (
     <div
-      className="group flex shrink-0 m-1 items-center border border-border-base rounded-lg text-13px px-2.5 py-1.5 capitalize text-brand-dark cursor-pointer transition duration-200 ease-in-out hover:border-brand"
+      className={`group flex shrink-0 m-1 items-center border border-border-base rounded-lg text-13px px-2.5 py-1.5 capitalize ${width as number > 1280? "text-brand-light":"text-brand-dark"}  cursor-pointer transition duration-200 ease-in-out hover:border-brand`}
       onClick={onClick}
     >
       {itemKey && itemValue}

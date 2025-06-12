@@ -59,15 +59,15 @@ const CustomerCare = () => {
   };
 
   return (
-    <div>
-      <button onClick={handleClick} className="z-10">
+    <>
+      <button onClick={handleClick} className="z-10 fixed top-[82vh] right-6">
         <img
-          className="z-20 w-14 h-14 fixed top-[82vh] right-6 rounded-full"
+          className="z-20 w-14 h-14  rounded-full"
           src="https://w7.pngwing.com/pngs/132/965/png-transparent-whatsapp-email-web-design-message-icon-whatsapp-whatsapp-logo-text-logo-grass-thumbnail.png"
           alt="WhatsApp"
         />
       </button>
-    </div>
+    </>
   );
 };
 

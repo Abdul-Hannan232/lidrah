@@ -1,5 +1,5 @@
 const EmailIcon = ({
-  color = '#B3B3B3',
+  color = '#CACACA',
   width = '18',
   height = '18',
   className = '',

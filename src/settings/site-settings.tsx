@@ -4,7 +4,7 @@ import { CNFlag } from '@components/icons/language/CNFlag';
 import { USFlag } from '@components/icons/language/USFlag';
 import { DEFlag } from '@components/icons/language/DEFlag';
 import { ESFlag } from '@components/icons/language/ESFlag';
-import siteLogo from 'public/assets/images/logo.svg';
+import siteLogo from 'public/assets/images/logo.png';
 
 export const siteSettings = {
   name: 'SARDAR BABA',
@@ -18,7 +18,7 @@ export const siteSettings = {
   logo: {
     // url: '',
     url: siteLogo,
-    alt: 'SARDAR_STORE',
+    alt: 'LIDRAH',
     href: '/',
     width: 128,
     height: 30,

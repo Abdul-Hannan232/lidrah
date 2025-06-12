@@ -6,7 +6,7 @@ import Heading from '@components/ui/heading';
 
 export default function TermsPageContent() {
   return (
-    <div className="py-12 lg:py-16 2xl:py-20">
+    <div className="py-12 lg:py-16 2xl:py-20 bg-brand-light ">
       <Container>
         <div className="w-full xl:max-w-[1200px] mx-auto">
           {termsAndServices?.map((item) => (

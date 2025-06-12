@@ -62,7 +62,7 @@ export default function AccountLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="border-t border-b border-border-base">
+    <div className="bg-brand-light border-t border-b border-border-base">
       <Container>
         <div className="pt-10 2xl:pt-12 pb-12 lg:pb-14 xl:pb-16 2xl:pb-20 xl:max-w-screen-xl 2xl:max-w-[1300px] mx-auto">
           <div className="flex flex-col w-full lg:flex-row">

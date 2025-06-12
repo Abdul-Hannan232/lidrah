@@ -3,18 +3,21 @@ import { useCart } from '@contexts/cart/cart.context';
 import { generateCartItem } from '@utils/generate-cart-item';
 import PlusIcon from '@components/icons/plus-icon';
 import useWindowSize from '@utils/use-window-size';
+import Button from '@components/ui/button';
 
 interface Props {
   data: any;
   variation?: any;
   disabled?: boolean;
   variant?: any;
+  className?:string
 }
 const AddToCart = ({
   data,
   variation,
   disabled,
   variant = 'mercury',
+  className=""
 }: Props) => {
   // console.log(">>>>>>>>>>>>>. ", variation);
   
@@ -73,14 +76,25 @@ const AddToCart = ({
         </span>
       </button>
     ) : (
-      <button
-        className="flex items-center justify-center w-8 h-8 text-4xl rounded-full bg-brand lg:w-10 lg:h-10 text-brand-light focus:outline-none"
+      // <button
+      //   className={`flex items-center justify-center w-8 h-8 text-4xl rounded-full bg-brand lg:w-10 lg:h-10 text-brand-light focus:outline-none ${className}`}
+      //   aria-label="Count Button"
+      //   onClick={handleAddClick}
+      //   disabled={disabled || outOfStock}
+      // >
+      //   <PlusIcon width={iconSize} height={iconSize} opacity="1" />
+      // </button>
+      <Button
+        className={`flex items-center  justify-center w-full h-full text-4xl rounded-md bg-brand  relative  text-brand-light focus:outline-none  hover:bg-opacity-100 ${className}`}
         aria-label="Count Button"
         onClick={handleAddClick}
         disabled={disabled || outOfStock}
       >
-        <PlusIcon width={iconSize} height={iconSize} opacity="1" />
-      </button>
+        Add
+        <div className='bg-brand-light3   w-12 md:w-14 h-12 md:h-14 rounded-lg  justify-self-end absolute right-0 flex items-center justify-center '>
+        <PlusIcon width={iconSize} height={iconSize} opacity="1"  />
+        </div>
+      </Button>
     )
   ) : (
     <Counter

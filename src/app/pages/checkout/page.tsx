@@ -76,7 +76,7 @@ export default function CheckoutPage() {
       </Head>
 
       <Divider />
-      <Container className="py-10 2xl:py-12 checkout">
+      <Container className="py-10 2xl:py-12 checkout bg-brand-light">
         <div className="flex flex-col mx-auto xl:max-w-screen-xl">
           <div className="flex flex-col flex-wrap grid-cols-1 gap-x-7 xl:gap-x-8 lg:grid lg:grid-cols-12">
             <div className="w-full col-start-1 col-end-9">

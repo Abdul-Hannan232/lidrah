@@ -40,8 +40,8 @@ const manrope = Manrope({
 
 export const metadata: Metadata = {
   title: {
-    template: 'SARDARBABA | %s',
-    default: 'SARDARBABA',
+    template: 'LIDRAH | %s',
+    default: 'LIDRAH',
   },
 };
 
@@ -80,8 +80,11 @@ export default function RootLayout({
             `,
           }}
         />
+
+
+        
       </head>
-        <body className={`${inter.variable} ${manrope.variable}`}>
+        <body className={`bg-black mb-0 pb-0 ${inter.variable} ${manrope.variable}`}>
           <Providers>
             <UserProvider>
               <CategoryContextProvider>
