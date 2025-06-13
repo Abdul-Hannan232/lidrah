@@ -1,11 +1,12 @@
 'use client';
 
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import { Autoplay, Navigation } from 'swiper/modules';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
+import http from '@framework/utils/http';
 
 interface VideoProps {
   id: number;
@@ -35,11 +36,41 @@ export default function VideoCarousel() {
   const [isBeginning, setIsBeginning] = useState(true);
   const [isEnd, setIsEnd] = useState(false);
   const swiperRef = useRef<any>(null);
+    const [heroBanner , setHeroBanner]= useState([])
+
+
+
+
+
+const fetchBanner = async () => {
+  const { data: { banners = [] } = {} } = await http.get(
+    `${process.env.NEXT_PUBLIC_REST_API_ENDPOINT}/videobanners`
+  );
+
+  const now = new Date();
+
+  const visibleBanners = banners.filter((banner: any) => {
+    const startDate = new Date(banner.startDate);
+    const endingDate = new Date(banner.endingDate);
+
+    
+    return banner.isVisible && startDate <= now && endingDate >= now;
+  });
+
+  setHeroBanner(visibleBanners);
+};
+
+useEffect(() => {
+  fetchBanner();
+}, []);
+
 
   const handleSlideChange = (swiper: any) => {
     setIsBeginning(swiper.isBeginning);
     setIsEnd(swiper.isEnd);
   };
+
+
 
   return (
     <div className="mt-5 mb-8 xl:mb-10 max-h-[442px] md:h-[380px] relative bg-white rounded-2xl">
@@ -60,14 +91,17 @@ export default function VideoCarousel() {
         modules={[Autoplay, Navigation]}
         className="mySwiper"
       >
-        {dummyVideos.map((video) => (
+        {heroBanner.map((video:any) => (
           <SwiperSlide key={video.id}>
             <video
-              src={video.videoUrl}
-              controls
+              // src={video.videoUrl}
+              src={video?.video}
+              controls 
               autoPlay
               loop={true}
               muted
+                            crossOrigin="anonymous" 
+
               className="max-h-[442px] w-full md:h-[380px] md:max-h-[380px] object-cover rounded-2xl"
             >
               Your browser does not support the video tag.
