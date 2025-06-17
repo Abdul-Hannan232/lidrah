@@ -92,7 +92,7 @@ export default function VideoCarousel() {
               autoPlay
               loop={true}
               muted
-              crossOrigin="anonymous"
+              // crossOrigin="anonymous"
               className="max-h-[442px] w-full md:h-[380px] md:max-h-[380px] object-cover rounded-2xl"
             >
               Your browser does not support the video tag.
