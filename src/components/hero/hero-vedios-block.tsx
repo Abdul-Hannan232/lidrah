@@ -40,7 +40,7 @@ export default function VideoCarousel() {
 
   const fetchBanner = async () => {
     const { data: { banners = [] } = {} } = await http.get(
-      `${process.env.NEXT_PUBLIC_REST_API_ENDPOINT}/videobanners`,
+      `${process.env.NEXT_PUBLIC_REST_API_ENDPOINT}/videobanners`, 
     );
 
     const now = new Date();
