@@ -1,11 +1,12 @@
 'use client';
 
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import { Autoplay, Navigation } from 'swiper/modules';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
+import http from '@framework/utils/http';
 
 interface VideoProps {
   id: number;
@@ -35,6 +36,28 @@ export default function VideoCarousel() {
   const [isBeginning, setIsBeginning] = useState(true);
   const [isEnd, setIsEnd] = useState(false);
   const swiperRef = useRef<any>(null);
+  const [heroBanner, setHeroBanner] = useState([]);
+
+  const fetchBanner = async () => {
+    const { data: { banners = [] } = {} } = await http.get(
+      `${process.env.NEXT_PUBLIC_REST_API_ENDPOINT}/videobanners`,
+    );
+
+    const now = new Date();
+
+    const visibleBanners = banners.filter((banner: any) => {
+      const startDate = new Date(banner.startDate);
+      const endingDate = new Date(banner.endingDate);
+
+      return banner.isVisible && startDate <= now && endingDate >= now;
+    });
+
+    setHeroBanner(visibleBanners);
+  };
+
+  useEffect(() => {
+    fetchBanner();
+  }, []);
 
   const handleSlideChange = (swiper: any) => {
     setIsBeginning(swiper.isBeginning);
@@ -60,14 +83,16 @@ export default function VideoCarousel() {
         modules={[Autoplay, Navigation]}
         className="mySwiper"
       >
-        {dummyVideos.map((video) => (
+        {heroBanner.map((video: any) => (
           <SwiperSlide key={video.id}>
             <video
-              src={video.videoUrl}
+              // src={video.videoUrl}
+              src={video?.video}
               controls
               autoPlay
               loop={true}
               muted
+              crossOrigin="anonymous"
               className="max-h-[442px] w-full md:h-[380px] md:max-h-[380px] object-cover rounded-2xl"
             >
               Your browser does not support the video tag.
@@ -80,7 +105,9 @@ export default function VideoCarousel() {
       <button
         onClick={() => swiperRef.current?.slidePrev()}
         className={`w-7 h-7 md:w-8 md:h-8 lg:w-9 lg:h-9 xl:w-10 xl:h-10 text-base lg:text-lg xl:text-xl cursor-pointer flex items-center justify-center transition duration-300 absolute top-1/2 -left-2 z-10 -translate-y-1/2 bg-brand-light transform shadow-navigation text-base hover:bg-brand hover:text-brand-light p-2 rounded-full ${
-          isBeginning ? 'opacity-0 pointer-events-none' : 'opacity-100 pointer-events-auto'
+          isBeginning
+            ? 'opacity-0 pointer-events-none'
+            : 'opacity-100 pointer-events-auto'
         }`}
       >
         <IoIosArrowBack size={20} />
@@ -88,7 +115,9 @@ export default function VideoCarousel() {
       <button
         onClick={() => swiperRef.current?.slideNext()}
         className={`w-7 h-7 md:w-8 md:h-8 lg:w-9 lg:h-9 xl:w-10 xl:h-10 text-base lg:text-lg xl:text-xl cursor-pointer flex items-center justify-center transition duration-300 absolute top-1/2 -right-2 z-10 -translate-y-1/2 bg-brand-light text-base p-2 transform shadow-navigation hover:bg-brand hover:text-brand-light rounded-full ${
-          isEnd ? 'opacity-0 pointer-events-none' : 'opacity-100 pointer-events-auto'
+          isEnd
+            ? 'opacity-0 pointer-events-none'
+            : 'opacity-100 pointer-events-auto'
         }`}
       >
         <IoIosArrowForward size={20} />
