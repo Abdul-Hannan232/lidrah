@@ -25,7 +25,7 @@ const CartItem: React.FC<CartItemProps> = ({ item }) => {
 
   const { price: totalPrice } = usePrice({
     amount: item?.itemTotal,
-    currencyCode: 'PKR',
+    currencyCode: 'USD',
   });
   const outOfStock = !isInStock(item.id);
   // console.log('ite cart ', item);
@@ -97,7 +97,7 @@ const CartItem: React.FC<CartItemProps> = ({ item }) => {
               Delivery:
               <span className="    ">
                 {' '}
-                {item?.delivery ? `Rs ${item?.delivery}` : 'Free'}
+                {item?.delivery ? `$ ${item?.delivery}` : 'Free'}
               </span>{' '}
             </span>
           }

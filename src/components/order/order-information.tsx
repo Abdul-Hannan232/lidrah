@@ -18,7 +18,7 @@ export default function OrderInformation({ oid }: { oid: number }) {
     data && {
       // amount: data.shipping_fee ? data.total + data.shipping_fee : data.total,
       amount: data.totalPrice,
-      currencyCode: 'PKR',
+      currencyCode: 'USD',
     },
   );
   if (isLoading)
@@ -32,44 +32,51 @@ export default function OrderInformation({ oid }: { oid: number }) {
     <div className="py-16 xl:px-32 2xl:px-44 3xl:px-56 lg:py-20">
       <div className="flex items-center justify-start px-4 py-4 mb-6 text-sm border rounded-md border-border-base bg-fill-secondary lg:px-5 text-brand-dark md:text-base lg:mb-8">
         <span className="flex items-center justify-center w-10 h-10 rounded-full ltr:mr-3 rtl:ml-3 lg:ltr:mr-4 lg:rtl:ml-4 bg-brand bg-opacity-20 shrink-0">
-          <IoCheckmarkCircle className="w-5 h-5 text-brand" />
+          <IoCheckmarkCircle className="w-5 h-5 text-brand-light" />
         </span>
-        Thank you. Your order has been received.
+        <span className="text-brand-light">
+          {' '}
+          Thank you. Your order has been received.
+        </span>
       </div>
 
       <ul className="flex flex-col border rounded-md border-border-base bg-fill-secondary md:flex-row mb-7 lg:mb-8 xl:mb-10">
-        <li className="px-4 py-4 text-base font-semibold border-b border-dashed text-brand-dark lg:text-lg md:border-b-0 md:border-r border-border-two lg:px-6 xl:px-8 md:py-5 lg:py-6 last:border-0">
-          <span className="block text-xs font-normal leading-5 uppercase text-brand-muted">
+        <li className="px-4 py-4 text-base font-semibold border-b border-dashed text-brand-light lg:text-lg md:border-b-0 md:border-r border-border-two lg:px-6 xl:px-8 md:py-5 lg:py-6 last:border-0">
+          <span className="block text-xs font-normal leading-5 uppercase text-brand-light text-opacity-50   ">
             Thank you. Your order has been received.:
           </span>
-          #ON00{data?.id}
+          <span className="text-brand-light"> #ON00{data?.id}</span>
         </li>
         <li className="px-4 py-4 text-base font-semibold border-b border-gray-300 border-dashed text-brand-dark lg:text-lg md:border-b-0 md:border-r lg:px-6 xl:px-8 md:py-5 lg:py-6 last:border-0">
-          <span className="uppercase text-[11px] block text-brand-muted font-normal leading-5">
+          <span className="uppercase text-[11px] block text-brand-light text-opacity-50  font-normal leading-5">
             Date:
           </span>
-          <CreatedAt createdAt={data?.createdAt} /> <br />
-          <span className="text-gray-400 text-sm">
+          <span className="text-brand-light  ">
+            {' '}
+            <CreatedAt createdAt={data?.createdAt} />
+          </span>{' '}
+          <br />
+          <span className="text-brand-light text-sm">
             {dayjs(data?.createdAt).format('MMMM D, YYYY')}
           </span>
         </li>
         <li className="px-4 py-4 text-base font-semibold border-b border-gray-300 border-dashed text-brand-dark lg:text-lg md:border-b-0 md:border-r lg:px-6 xl:px-8 md:py-5 lg:py-6 last:border-0">
-          <span className="uppercase text-[11px] block text-brand-muted font-normal leading-5">
+          <span className="uppercase text-[11px] block text-brand-light text-opacity-50  font-normal leading-5">
             Send Mail:
           </span>
-          {data?.user?.email}
+          <span className="text-brand-light  ">{data?.user?.email}</span>
         </li>
         <li className="px-4 py-4 text-base font-semibold border-b border-gray-300 border-dashed text-brand-dark lg:text-lg md:border-b-0 md:border-r lg:px-6 xl:px-8 md:py-5 lg:py-6 last:border-0">
-          <span className="uppercase text-[11px] block text-brand-muted font-normal leading-5">
+          <span className="uppercase text-[11px] block text-brand-light text-opacity-50  font-normal leading-5">
             Total:
           </span>
-          {total}
+          <span className="text-brand-light  "> {total}</span>
         </li>
         <li className="px-4 py-4 text-base font-semibold border-b border-gray-300 border-dashed text-brand-dark lg:text-lg md:border-b-0 md:border-r lg:px-6 xl:px-8 md:py-5 lg:py-6 last:border-0">
-          <span className="uppercase text-[11px] block text-brand-muted font-normal leading-5">
+          <span className="uppercase text-[11px] block text-brand-light text-opacity-50  font-normal leading-5">
             Payment method:
           </span>
-          {data?.paymentMethod}
+          <span className="text-brand-light  "> {data?.paymentMethod}</span>
         </li>
       </ul>
 

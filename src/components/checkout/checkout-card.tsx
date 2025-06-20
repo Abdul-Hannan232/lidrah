@@ -266,7 +266,7 @@ const CheckoutCard: React.FC<CheckoutCardProps> = ({ userData }) => {
 
   const { price: subtotal } = usePrice({
     amount: total,
-    currencyCode: 'PKR',
+    currencyCode: 'USD',
   });
 
   const updateUser = async (id: number) => {
@@ -381,10 +381,10 @@ const CheckoutCard: React.FC<CheckoutCardProps> = ({ userData }) => {
       //   ? productData?.price * Number(quantity)
       //   : subtotal,
       price: productData?.promo_price_pkr
-        ? 'Rs ' + productData?.promo_price_pkr * Number(quantity)
+        ? '$ ' + productData?.promo_price_pkr * Number(quantity)
         : productData?.price
           ? productData?.price * Number(quantity)
-          : 'Rs ' +
+          : '$ ' +
             items?.reduce(
               (acc, item) => acc + item.price * (item?.quantity as number),
               0,
@@ -404,20 +404,20 @@ const CheckoutCard: React.FC<CheckoutCardProps> = ({ userData }) => {
       // price: items && !id
       // ? "Rs "+ items?.reduce((acc, item) => acc + Number(item.delivery), 0)
       //   : "Rs "+ Number(productData?.delivery) * Number(quantity)
-      price: totalDelivery === 0 ? 'Free Shipping' : 'Rs ' + totalDelivery,
+      price: totalDelivery === 0 ? 'Free Shipping' : '$ ' + totalDelivery,
     },
     {
       id: 3,
       name: 'Total',
       price: productData?.promo_price_pkr
-        ? 'Rs ' +
+        ? '$ ' +
           (productData?.promo_price_pkr * Number(quantity) +
             (Number(productData?.delivery) || 0))
         : productData?.price
-          ? 'Rs ' +
+          ? '$ ' +
             (Number(productData?.price) * Number(quantity) +
               (Number(productData?.delivery) || 0))
-          : subtotal?.replace('$', 'Rs '),
+          : subtotal,
     },
   ];
 

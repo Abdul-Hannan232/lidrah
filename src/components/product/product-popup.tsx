@@ -887,7 +887,7 @@ export default function ProductPopup() {
                 <div className="flex items-center mt-5">
                   <div className="text-brand-dark font-bold text-base md:text-xl xl:text-[22px]">
                     {/* {price} */}
-                    Rs {displayPrice || ''}
+                    $ {displayPrice || ''}
                   </div>
                   {/* {promo_price_pkr > 0 && (
                       <del className="text-sm text-opacity-50 md:text-15px ltr:pl-3 rtl:pr-3 text-brand-dark ">
@@ -898,7 +898,7 @@ export default function ProductPopup() {
                     <>
                       <del className="text-sm text-opacity-50 md:text-15px ltr:pl-3 rtl:pr-3 text-brand-dark ">
                         {/* {basePrice} */}
-                        Rs {delPrice || null}
+                        $ {delPrice || null}
                       </del>
                       <span className="inline-block rounded font-bold text-xs md:text-sm bg-brand-tree bg-opacity-20 text-brand-tree uppercase px-2 py-1 ltr:ml-2.5 rtl:mr-2.5">
                         {discount} Off
@@ -914,7 +914,7 @@ export default function ProductPopup() {
                   Delivery Charges:{' '}
                 </span>
                 {data?.delivery
-                  ? (('Rs ' + data?.delivery) as string)
+                  ? (('$ ' + data?.delivery) as string)
                   : 'Free Delivery'}
               </div>
 
