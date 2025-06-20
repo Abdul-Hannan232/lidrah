@@ -26,7 +26,7 @@ const OrderItemCard = ({ product }: { product: OrderItem }) => {
           : product?.productDetails?.price
             ? product?.productDetails?.price * Number(product.quantity)
             : null,
-    currencyCode: 'PKR',
+    currencyCode: 'USD',
   });
  
 
@@ -44,7 +44,7 @@ const OrderItemCard = ({ product }: { product: OrderItem }) => {
         {itemTotal}{' '}
         {product.productDetails.delivery > 0 && (
           <div className="text-sm text-gray-500">
-            Delivery: {product.productDetails.delivery}
+            Delivery: $ {product.productDetails.delivery}
           </div>
         )}{' '}
         {product.productDetails.variations  && selectedVariation &&  (
@@ -68,7 +68,7 @@ const OrderDetails: React.FC<{ className?: string; id?: number }> = ({
   const { price: subtotal } = usePrice(
     order && {
       amount: order.totalPrice,
-      currencyCode: 'PKR',
+      currencyCode: 'USD',
     },
   );
  
@@ -82,10 +82,10 @@ const OrderDetails: React.FC<{ className?: string; id?: number }> = ({
       <table className="w-full text-sm font-semibold text-brand-dark lg:text-base">
         <thead>
           <tr>
-            <th className="w-1/2 p-4 bg-fill-secondary ltr:text-left rtl:text-right ltr:first:rounded-tl-md rtl:first:rounded-tr-md">
+            <th className="w-1/2 p-4 bg-fill-secondary ltr:text-left rtl:text-right ltr:first:rounded-tl-md rtl:first:rounded-tr-md text-brand-light">
               Product
             </th>
-            <th className="w-1/2 p-4 bg-fill-secondary ltr:text-left rtl:text-right ltr:last:rounded-tr-md rtl:last:rounded-tl-md">
+            <th className="w-1/2 p-4 bg-fill-secondary ltr:text-left rtl:text-right ltr:last:rounded-tr-md rtl:last:rounded-tl-md text-brand-light">
               Total
             </th>
           </tr>
@@ -96,8 +96,8 @@ const OrderDetails: React.FC<{ className?: string; id?: number }> = ({
           ))}
         </tbody>
         <tfoot>
-          <tr className="odd:bg-fill-secondary">
-            <td className="p-4 italic">Subtotal:</td>
+          <tr className="odd:bg-fill-secondary text-brand-light">
+            <td className="p-4 italic ">Subtotal:</td>
             <td className="p-4">{subtotal}</td>
           </tr>
           
@@ -105,9 +105,9 @@ const OrderDetails: React.FC<{ className?: string; id?: number }> = ({
             <td className="p-4 italic">Payment method:</td>
             <td className="p-4">{order?.paymentMethod}</td>
           </tr>
-          <tr className="odd:bg-fill-secondary">
+          <tr className="odd:bg-fill-secondary text-brand-light">
             <td className="p-4 italic">Total:</td>
-            <td className="p-4">Rs {order?.totalPrice}</td>
+            <td className="p-4"> $ {order?.totalPrice}</td>
           </tr>
           <tr className="odd:bg-fill-secondary">
             <td className="p-4 italic">Note:</td>

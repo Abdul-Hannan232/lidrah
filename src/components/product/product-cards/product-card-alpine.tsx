@@ -107,8 +107,9 @@ const ProductCardAlpine: React.FC<ProductProps> = ({ product, className }) => {
   return (
     <article
       className={cn(
+         className,
         'flex flex-col group overflow-hidden rounded-2xl cursor-pointer transition-all border border-border-five  duration-300 shadow-card hover:shadow-cardHover relative h-full',
-        className,
+       
       )}
       onClick={handlePopupView}
       title={title as string}
@@ -157,14 +158,15 @@ const ProductCardAlpine: React.FC<ProductProps> = ({ product, className }) => {
         </div>
       </div>
 
-      <div className="flex flex-col px-3 md:px-4 lg:px-[18px] pb-5 lg:pb-6 pt-1.5 h-full">
+      {/* <div className="flex flex-col px-2 2xl:px-4 lg:px-[18px] pb-5 lg:pb-6 pt-1.5 h-full"> */}
+      <div className="flex flex-col px-2 2xl:px-4 lg:px-[18px] pb-4 pt-1.5 h-full">
         <div className="mb-1 lg:mb-1.5 -mx-1 flex justify-between">
           <span className="inline-block mx-1 text-sm font-semibold sm:text-15px lg:text-base text-brand-light">
-            RS {displayPrice}
+            $ {displayPrice}
           </span>
           {delPrice && (
             <del className="mx-1 text-sm text-brand-light text-opacity-70">
-              RS {delPrice}
+              $ {delPrice}
             </del>
           )}
         </div>

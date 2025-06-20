@@ -281,7 +281,7 @@ const ProductSingleDetails = () => {
             <div className="flex items-center mt-5">
               <div className="text-brand-dark font-bold text-base md:text-xl xl:text-[22px]">
                 {/* {price} */}
-                Rs {displayPrice || ''}
+                $ {displayPrice || ''}
               </div>
               {/* {(data?.promo_price_pkr as number) > 0 && (
                   <del className="text-sm text-opacity-50 md:text-15px ltr:pl-3 rtl:pr-3 text-brand-dark ">
@@ -291,7 +291,7 @@ const ProductSingleDetails = () => {
               {discount && (
                 <>
                   <del className="text-sm text-opacity-50 md:text-15px ltr:pl-3 rtl:pr-3 text-brand-dark ">
-                    Rs {delPrice || 50}
+                    $ {delPrice || 50}
                   </del>
                   <span className="inline-block rounded font-bold text-xs md:text-sm bg-brand-tree bg-opacity-20 text-brand-tree uppercase px-2 py-1 ltr:ml-2.5 rtl:mr-2.5">
                     {discount} Off
@@ -307,7 +307,7 @@ const ProductSingleDetails = () => {
               Delivery Charges:{' '}
             </span>
             {data?.delivery
-              ? (('Rs ' + data?.delivery) as string)
+              ? (('$ ' + data?.delivery) as string)
               : 'Free Delivery'}
           </div>
 

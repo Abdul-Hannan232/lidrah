@@ -27,7 +27,7 @@ const FeaturedCard: React.FC<Props> = ({ item, className }) => {
         <Heading variant="title" className="mb-1.5 -mt-0.5">
           {title}
         </Heading>
-        <Text>{description}</Text>
+        <Text className='text-brand-light'>{description}</Text>
       </div>
       <div className="flex shrink-0 items-center justify-center bg-brand-light rounded-full w-[80px] xl:w-24 3xl:w-[110px] h-[80px] xl:h-24 3xl:h-[110px]">
         {icon}

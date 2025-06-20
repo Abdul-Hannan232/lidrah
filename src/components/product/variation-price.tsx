@@ -12,16 +12,16 @@ export default function VariationPrice({
         ? selectedVariation.promo_price_pkr
         : selectedVariation.price,
       baseAmount: selectedVariation.price,
-      currencyCode: 'PKR',
+      currencyCode: 'USD',
     },
   );
   const { price: min_price } = usePrice({
     amount: minPrice,
-    currencyCode: 'PKR',
+    currencyCode: 'USD',
   });
   const { price: max_price } = usePrice({
     amount: maxPrice,
-    currencyCode: 'PKR',
+    currencyCode: 'USD',
   });
   return (
     <div className="flex items-center mt-5">

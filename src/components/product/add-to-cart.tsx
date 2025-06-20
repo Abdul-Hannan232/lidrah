@@ -85,13 +85,14 @@ const AddToCart = ({
       //   <PlusIcon width={iconSize} height={iconSize} opacity="1" />
       // </button>
       <Button
-        className={`flex items-center  justify-center w-full h-full text-4xl rounded-md bg-brand  relative  text-brand-light focus:outline-none  hover:bg-opacity-100 ${className}`}
+        className={`flex items-center  justify-center w-full   text-4xl rounded-md bg-brand  relative  text-brand-light focus:outline-none  hover:bg-opacity-100 ${className}`}
         aria-label="Count Button"
         onClick={handleAddClick}
         disabled={disabled || outOfStock}
       >
         Add
-        <div className='bg-brand-light3   w-12 md:w-14 h-12 md:h-14 rounded-lg  justify-self-end absolute right-0 flex items-center justify-center '>
+        {/* <div className='bg-brand-light3   w-12 md:w-14 h-12 md:h-14 rounded-lg  justify-self-end absolute right-0 flex items-center justify-center '> */}
+        <div className='bg-brand-light3   w-[40px] h-[40px] rounded-lg  justify-self-end absolute right-0 flex items-center justify-center '>
         <PlusIcon width={iconSize} height={iconSize} opacity="1"  />
         </div>
       </Button>

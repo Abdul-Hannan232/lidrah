@@ -13,7 +13,7 @@ export const CheckoutItem: React.FC<{
 
   const { price } = usePrice({
     amount: item.itemTotal,
-    currencyCode: 'PKR',
+    currencyCode: 'USD',
   });
 
   let gallery: string[] = [];
@@ -61,9 +61,9 @@ export const CheckoutItem: React.FC<{
       </h6>
       <div className="flex flex-col font-normal ltr:ml-auto rtl:mr-auto text-15px text-brand-dark ltr:pl-2 rtl:pr-2 shrink-0 items-end ">
         {/* {price ? price : item.price * Number(quantity)} */}
-        Rs{' '}
+        ${' '}
         {price
-          ? price.replace('PKR', '').trim() // removes 'PKR' if present
+          ? price.replace('$', '').trim()  
           : item?.promo_price_pkr
             ? item?.promo_price_pkr * Number(quantity)
             : item.price * Number(quantity)}
@@ -73,7 +73,7 @@ export const CheckoutItem: React.FC<{
           <span className="text-13px sm:text-sm text-brand-muted  font-normal">
             Delivery:
             <span className="    ltr:pl-3 rtl:pr-3 ">
-              Rs {item?.delivery}
+              $ {item?.delivery}
             </span>{' '}
           </span>
         ) : (
